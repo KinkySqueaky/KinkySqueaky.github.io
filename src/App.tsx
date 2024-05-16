@@ -1,15 +1,35 @@
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Error from "./Error";
+import KinkList from "./components/KinkList/KinkList";
+import Home from "./components/Home/Home";
+import NavBar from "./components/NavBar";
 
 export default function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+      errorElement: <Error />,
+    },
+    {
+      path: "kinklist",
+      element: <KinkList />,
+    },
+  ]);
+
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-        Hi Spork, let me know if you're able to see this!
-        </Typography>
-      </Box>
-    </Container>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} errorElement={<Error />} />
+        <Route path="/kinklist" element={<KinkList />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
