@@ -6,7 +6,7 @@ export default function App() {
   return (
     <Container maxWidth="sm">
       <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
+        <Typography variant="h4" sx={{ mb: 2 }}>
           Oopsie whoopsie, you ended up somewhere you shouldn't be!
         </Typography>
       </Box>
