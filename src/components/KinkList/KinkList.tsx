@@ -94,14 +94,16 @@ export default function KinkList() {
         paddingRight: { xxl: "12px" },
       }}
     >
-      {questionData.map((group) => (
-        <Group
-          groupData={group}
-          responses={getGroupResponses(responses, group)}
-          onChange={handleChange}
-          key={group.title}
-        />
-      ))}
+      <Box sx={{ marginBottom: 2 }}>
+        {questionData.map((group) => (
+          <Group
+            groupData={group}
+            responses={getGroupResponses(responses, group)}
+            onChange={handleChange}
+            key={group.title}
+          />
+        ))}
+      </Box>
     </Container>
   );
 }
