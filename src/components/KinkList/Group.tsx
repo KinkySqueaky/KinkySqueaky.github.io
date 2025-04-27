@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -18,8 +18,10 @@ interface GroupParams {
   onChange: (questionID: string, type: string, value: string) => void;
 }
 
-export default function Group(params: GroupParams) {
-  const { groupData, responses: initialResponses, onChange } = params;
+const Group = memo(function Group(props: GroupParams) {
+  const { groupData, responses: initialResponses, onChange } = props;
+
+  //useTraceUpdate(props);
 
   const [expanded, setExpanded] = useState(true);
 
@@ -50,4 +52,6 @@ export default function Group(params: GroupParams) {
       )}
     </Box>
   );
-}
+});
+
+export default Group;

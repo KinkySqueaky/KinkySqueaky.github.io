@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
@@ -22,8 +22,8 @@ interface QuestionParams {
   onChange: (questionID: string, type: string, value: string) => void;
 }
 
-export default function Question(params: QuestionParams) {
-  const { questionData, response: initialResponse, onChange } = params;
+const Question = memo(function Question(props: QuestionParams) {
+  const { questionData, response: initialResponse, onChange } = props;
 
   const [expanded, setExpanded] = useState(true);
 
@@ -161,4 +161,6 @@ export default function Question(params: QuestionParams) {
       )}
     </Card>
   );
-}
+});
+
+export default Question;

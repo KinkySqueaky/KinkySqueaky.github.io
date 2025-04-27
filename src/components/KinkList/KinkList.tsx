@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { useParams } from "react-router-dom";
 
 import { useStableNavigate } from "../../hooks/StableNavigate";
 import * as RoutePaths from "../../constants/RoutePaths";
 
 import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
 import Group from "./Group";
@@ -20,7 +19,7 @@ import {
   getGroupResponses,
 } from "./Utils";
 
-export default function KinkList() {
+const KinkList = memo(function KinkList() {
   const { listData } = useParams();
   const navigate = useStableNavigate();
 
@@ -38,6 +37,7 @@ export default function KinkList() {
 
   // Set hash on change to responses
   useEffect(() => {
+    console.log("HIT");
     // Set hash
     navigate(`${RoutePaths.KINKLIST}/${responseToCode(responses)}`, {
       replace: true,
@@ -106,4 +106,6 @@ export default function KinkList() {
       </Box>
     </Container>
   );
-}
+});
+
+export default KinkList;

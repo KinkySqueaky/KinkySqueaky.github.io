@@ -1,3 +1,4 @@
+import { memo } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -6,7 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import HomeIcon from "@mui/icons-material/Home";
 import { useStableNavigate } from "../../hooks/StableNavigate";
 
-export default function NavBar() {
+const NavBar = memo(function NavBar() {
   const navigate = useStableNavigate();
 
   return (
@@ -32,4 +33,6 @@ export default function NavBar() {
       </AppBar>
     </Box>
   );
-}
+});
+
+export default NavBar;

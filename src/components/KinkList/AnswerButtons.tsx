@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup/ButtonGroup";
 
@@ -6,9 +7,8 @@ interface AnswerButtonsParams {
   onChange: (value: string) => void;
 }
 
-export default function AnswerButtons(params: AnswerButtonsParams) {
-  const { value, onChange } = params;
-  console.log(value);
+const AnswerButtons = memo(function AnswerButtons(props: AnswerButtonsParams) {
+  const { value, onChange } = props;
 
   const handleChange = (newValue: string) => {
     const useValue = newValue === value ? "H" : newValue;
@@ -93,4 +93,6 @@ export default function AnswerButtons(params: AnswerButtonsParams) {
       </Button>
     </ButtonGroup>
   );
-}
+});
+
+export default AnswerButtons;
