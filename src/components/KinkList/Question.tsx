@@ -50,7 +50,9 @@ const Question = memo(function Question(props: QuestionParams) {
             <Grid container spacing={1}>
               <Grid item xs={12} md={4}>
                 <Typography variant="body1" sx={{ textAlign: "center" }}>
-                  {questionData.top} Interest
+                  {questionData.top
+                    ? `${questionData.top} Interest`
+                    : "Interest"}
                 </Typography>
               </Grid>
               <Grid
@@ -71,7 +73,9 @@ const Question = memo(function Question(props: QuestionParams) {
             <Grid container spacing={1}>
               <Grid item xs={12} md={4}>
                 <Typography variant="body1" sx={{ textAlign: "center" }}>
-                  {questionData.top} Experience
+                  {questionData.top
+                    ? `${questionData.top} Experience`
+                    : "Experience"}
                 </Typography>
               </Grid>
               <Grid
@@ -88,48 +92,58 @@ const Question = memo(function Question(props: QuestionParams) {
               </Grid>
             </Grid>
           </Box>
-          <Box mb={1}>
-            <Grid container spacing={1}>
-              <Grid item xs={12} md={4}>
-                <Typography variant="body1" sx={{ textAlign: "center" }}>
-                  {questionData.bottom} Interest
-                </Typography>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                md={8}
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <AnswerButtons questionID={questionData.ID} category="botint" />
-              </Grid>
-            </Grid>
-          </Box>
-          <Box mb={1}>
-            <Grid container spacing={1}>
-              <Grid item xs={12} md={4}>
-                <Typography variant="body1" sx={{ textAlign: "center" }}>
-                  {questionData.bottom} Experience
-                </Typography>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                md={8}
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <AnswerButtons questionID={questionData.ID} category="botexp" />
-              </Grid>
-            </Grid>
-          </Box>
+          {questionData.top && (
+            <>
+              <Box mb={1}>
+                <Grid container spacing={1}>
+                  <Grid item xs={12} md={4}>
+                    <Typography variant="body1" sx={{ textAlign: "center" }}>
+                      {questionData.bottom} Interest
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    item
+                    xs={12}
+                    md={8}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <AnswerButtons
+                      questionID={questionData.ID}
+                      category="botint"
+                    />
+                  </Grid>
+                </Grid>
+              </Box>
+              <Box mb={1}>
+                <Grid container spacing={1}>
+                  <Grid item xs={12} md={4}>
+                    <Typography variant="body1" sx={{ textAlign: "center" }}>
+                      {questionData.bottom} Experience
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    item
+                    xs={12}
+                    md={8}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <AnswerButtons
+                      questionID={questionData.ID}
+                      category="botexp"
+                    />
+                  </Grid>
+                </Grid>
+              </Box>
+            </>
+          )}
         </>
       )}
     </Card>

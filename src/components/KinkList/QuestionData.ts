@@ -1,8 +1,8 @@
 export type QuestionInfo = {
   ID: string;
   title: string;
-  top: string;
-  bottom: string;
+  top?: string;
+  bottom?: string;
   tooltip?: string;
 };
 
@@ -60,8 +60,6 @@ export const questionData: Array<GroupInfo> = [
       {
         ID: "AH",
         title: "Dilating",
-        top: "Partner",
-        bottom: "Self",
       },
       {
         ID: "AJ",
