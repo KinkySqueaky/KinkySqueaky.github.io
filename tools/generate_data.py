@@ -31,7 +31,7 @@ for sheet in sheet_names:
         sheet_name=sheet, na_values=["N/A", "NULL", ""], keep_default_na=False
     ).iterrows():
         question = {}
-        question["ID"] = row["ID"]
+        question["ID"] = row["ID"].strip()
         question["title"] = row["Title"]
         if row["Top Text"] != "SKIP":
             question["top"] = row["Top Text"]

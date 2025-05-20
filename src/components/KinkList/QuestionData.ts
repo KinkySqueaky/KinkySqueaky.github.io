@@ -286,7 +286,7 @@ export const questionData: Array<GroupInfo> = [
         title: "Swapping (with one other couple)",
       },
       {
-        ID: "BV ",
+        ID: "BV",
         title: "Swinging (multiple couples)",
       },
     ],
