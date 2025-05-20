@@ -3,7 +3,9 @@ import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup/ButtonGroup";
 import { Category } from "./utils";
 
-import { useKLSelector, useKLDispatch } from "./store";
+import { useSelector, useDispatch } from "react-redux";
+import { type RootState } from "../../store/store";
+import { recordAnswer } from "./slice";
 
 interface AnswerButtonsParams {
   questionID: string;
@@ -13,19 +15,20 @@ interface AnswerButtonsParams {
 const AnswerButtons = memo(function AnswerButtons(props: AnswerButtonsParams) {
   const { questionID, category } = props;
 
-  const answerData = useKLSelector(
-    (state) => state.kinklist?.[questionID]?.[category]
+  const answerData = useSelector(
+    (state: RootState) => state.kinklist?.[questionID]?.[category]
   );
-  const dispatch = useKLDispatch();
+  const dispatch = useDispatch();
 
   const handleChange = (newValue: string) => {
     const useValue = newValue === answerData ? "H" : newValue;
-    dispatch({
-      type: "ANSWER",
-      question: questionID,
-      category: category,
-      value: useValue,
-    });
+    dispatch(
+      recordAnswer({
+        question: questionID,
+        category: category,
+        value: useValue,
+      })
+    );
   };
 
   return (

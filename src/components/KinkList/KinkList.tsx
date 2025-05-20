@@ -4,41 +4,36 @@ import { useParams } from "react-router-dom";
 import { useStableNavigate } from "../../hooks/StableNavigate";
 import * as RoutePaths from "../../constants/RoutePaths";
 
-import { store, useKLDispatch, useKLSelector } from "./store";
-import { Provider } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { type RootState } from "../../store/store";
+import { initialize, cleanup } from "./slice";
 
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 
 import Group from "./Group";
-
 import { questionData } from "./QuestionData";
 import { responseToCode } from "./utils";
 
-const KinkListForm = memo(function KinkListForm() {
+const KinkList = memo(function KinkList() {
   const { listData } = useParams();
   const navigate = useStableNavigate();
 
-  const dispatch = useKLDispatch();
-  //console.log(responses);
+  const responses = useSelector((state: RootState) => state.kinklist);
+  const dispatch = useDispatch();
 
-  const responses = useKLSelector((state) => state.kinklist);
-
-  // Load the initial data, clean it, then set the internal response data
   useEffect(() => {
     if (listData) {
-      dispatch({ type: "INIT", data: listData });
+      dispatch(initialize(listData));
     }
 
     return () => {
-      dispatch({ type: "CLEANUP" });
+      dispatch(cleanup());
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
-  // Disabling rule to only get value on the first render of the component
 
   // Set hash on change to responses
   useEffect(() => {
-    // Set hash
     navigate(`${RoutePaths.KINKLIST}/${responseToCode(responses)}`, {
       replace: true,
     });
@@ -58,14 +53,6 @@ const KinkListForm = memo(function KinkListForm() {
         ))}
       </Box>
     </Container>
-  );
-});
-
-const KinkList = memo(function KinkList() {
-  return (
-    <Provider store={store}>
-      <KinkListForm />
-    </Provider>
   );
 });
 
