@@ -1,4 +1,4 @@
-import { useState, memo } from "react";
+import { useReducer, memo } from "react";
 
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
@@ -22,7 +22,7 @@ interface QuestionParams {
 const Question = memo(function Question(props: QuestionParams) {
   const { questionData } = props;
 
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, toggleExpanded] = useReducer((state) => !state, false);
 
   const hideCollapse = useMediaQuery((theme: Theme) =>
     theme.breakpoints.up("sm")
@@ -32,11 +32,7 @@ const Question = memo(function Question(props: QuestionParams) {
     <Card sx={{ width: "100%", padding: 2 }}>
       <Typography variant="h6" sx={{ textAlign: "center" }}>
         {!hideCollapse && (
-          <IconButton
-            onClick={() => {
-              setExpanded(!expanded);
-            }}
-          >
+          <IconButton onClick={toggleExpanded}>
             {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
           </IconButton>
         )}

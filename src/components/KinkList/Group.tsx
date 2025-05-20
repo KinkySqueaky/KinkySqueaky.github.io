@@ -1,4 +1,4 @@
-import { useState, memo } from "react";
+import { useReducer, memo } from "react";
 
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -18,16 +18,12 @@ interface GroupParams {
 const Group = memo(function Group(props: GroupParams) {
   const { groupData } = props;
 
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, toggleExpanded] = useReducer((state) => !state, false);
 
   return (
     <Box sx={{ mt: 2 }}>
       <Typography variant="h4" sx={{ textAlign: "center", marginBottom: 2 }}>
-        <IconButton
-          onClick={() => {
-            setExpanded(!expanded);
-          }}
-        >
+        <IconButton onClick={toggleExpanded}>
           {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
         </IconButton>
         {groupData.title}

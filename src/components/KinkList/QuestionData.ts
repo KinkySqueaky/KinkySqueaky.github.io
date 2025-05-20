@@ -292,7 +292,7 @@ export const questionData: Array<GroupInfo> = [
     ],
   },
   {
-    title: "Fetishes, Fantasies, and Genera",
+    title: "Fetishes, Fantasies, and General Roleplay",
     questions: [
       {
         ID: "DA",
@@ -551,7 +551,7 @@ export const questionData: Array<GroupInfo> = [
     ],
   },
   {
-    title: "Voyeurism, Exhibitionism, and H",
+    title: "Voyeurism, Exhibitionism, and Humiliation",
     questions: [
       {
         ID: "GA",
@@ -947,7 +947,7 @@ export const questionData: Array<GroupInfo> = [
     ],
   },
   {
-    title: "Service and Behavior Restrictio",
+    title: "Service and Behavior Restrictions",
     questions: [
       {
         ID: "MA",
@@ -1628,7 +1628,7 @@ export const questionData: Array<GroupInfo> = [
     ],
   },
   {
-    title: "Age PlayRoleplay",
+    title: "Age Play/Roleplay",
     questions: [
       {
         ID: "UA",
@@ -1738,7 +1738,7 @@ export const questionData: Array<GroupInfo> = [
     ],
   },
   {
-    title: "Body Part FocusTorture",
+    title: "Body Part Focus/Torture",
     questions: [
       {
         ID: "WA",
