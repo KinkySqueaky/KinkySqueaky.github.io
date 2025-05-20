@@ -22,7 +22,7 @@ interface QuestionParams {
 const Question = memo(function Question(props: QuestionParams) {
   const { questionData } = props;
 
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   const hideCollapse = useMediaQuery((theme: Theme) =>
     theme.breakpoints.up("sm")
@@ -92,7 +92,7 @@ const Question = memo(function Question(props: QuestionParams) {
               </Grid>
             </Grid>
           </Box>
-          {questionData.top && (
+          {questionData.bottom && (
             <>
               <Box mb={1}>
                 <Grid container spacing={1}>
