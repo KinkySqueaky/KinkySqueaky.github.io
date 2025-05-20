@@ -22,7 +22,7 @@ interface QuestionParams {
 const Question = memo(function Question(props: QuestionParams) {
   const { questionData } = props;
 
-  const [expanded, toggleExpanded] = useReducer((state) => !state, false);
+  const [expanded, toggleExpanded] = useReducer((state) => !state, true);
 
   const hideCollapse = useMediaQuery((theme: Theme) =>
     theme.breakpoints.up("sm")
