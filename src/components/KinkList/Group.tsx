@@ -10,18 +10,13 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { type GroupInfo } from "./QuestionData";
 import Question from "./Question";
-import { type Responses } from "./Utils";
 
 interface GroupParams {
   groupData: GroupInfo;
-  responses: Responses;
-  onChange: (questionID: string, type: string, value: string) => void;
 }
 
 const Group = memo(function Group(props: GroupParams) {
-  const { groupData, responses: initialResponses, onChange } = props;
-
-  //useTraceUpdate(props);
+  const { groupData } = props;
 
   const [expanded, setExpanded] = useState(true);
 
@@ -41,11 +36,7 @@ const Group = memo(function Group(props: GroupParams) {
         <Grid container spacing={2} sx={{ justifyContent: "center" }}>
           {groupData.questions.map((qst) => (
             <Grid item xs={12} sm={6} xl={4} key={qst.ID}>
-              <Question
-                questionData={qst}
-                response={initialResponses[qst.ID]}
-                onChange={onChange}
-              />
+              <Question questionData={qst} />
             </Grid>
           ))}
         </Grid>

@@ -9,15 +9,14 @@ import * as RoutePaths from "./constants/RoutePaths";
 
 export default function App() {
   const navbar = useMemo(() => <NavBar />, []);
-  const kinklist = useMemo(() => <KinkList />, []);
   return (
     <HashRouter>
       <StableNavigateContextProvider>
         {navbar}
         <Routes>
           <Route path="" element={<Home />} />
-          <Route path={RoutePaths.KINKLIST} element={kinklist}>
-            <Route path=":listData" element={kinklist} />
+          <Route path={RoutePaths.KINKLIST} element={<KinkList />}>
+            <Route path=":listData" element={<KinkList />} />
           </Route>
           <Route path="*" element={<Error />} />
         </Routes>

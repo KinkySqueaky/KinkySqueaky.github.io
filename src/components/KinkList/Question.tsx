@@ -14,26 +14,19 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import AnswerButtons from "./AnswerButtons";
 import { type QuestionInfo } from "./QuestionData";
-import { type Category } from "./Utils";
 
 interface QuestionParams {
   questionData: QuestionInfo;
-  response: { [key in Category]: string } | undefined;
-  onChange: (questionID: string, type: string, value: string) => void;
 }
 
 const Question = memo(function Question(props: QuestionParams) {
-  const { questionData, response: initialResponse, onChange } = props;
+  const { questionData } = props;
 
   const [expanded, setExpanded] = useState(true);
 
   const hideCollapse = useMediaQuery((theme: Theme) =>
     theme.breakpoints.up("sm")
   );
-
-  const handleChange = (category: string) => (value: string) => {
-    onChange(questionData.ID, category, value);
-  };
 
   return (
     <Card sx={{ width: "100%", padding: 2 }}>
@@ -70,12 +63,7 @@ const Question = memo(function Question(props: QuestionParams) {
                   justifyContent: "center",
                 }}
               >
-                <AnswerButtons
-                  value={
-                    initialResponse ? initialResponse["topint"] : undefined
-                  }
-                  onChange={handleChange("topint")}
-                />
+                <AnswerButtons questionID={questionData.ID} category="topint" />
               </Grid>
             </Grid>
           </Box>
@@ -96,12 +84,7 @@ const Question = memo(function Question(props: QuestionParams) {
                   justifyContent: "center",
                 }}
               >
-                <AnswerButtons
-                  value={
-                    initialResponse ? initialResponse["topexp"] : undefined
-                  }
-                  onChange={handleChange("topexp")}
-                />
+                <AnswerButtons questionID={questionData.ID} category="topexp" />
               </Grid>
             </Grid>
           </Box>
@@ -122,12 +105,7 @@ const Question = memo(function Question(props: QuestionParams) {
                   justifyContent: "center",
                 }}
               >
-                <AnswerButtons
-                  value={
-                    initialResponse ? initialResponse["botint"] : undefined
-                  }
-                  onChange={handleChange("botint")}
-                />
+                <AnswerButtons questionID={questionData.ID} category="botint" />
               </Grid>
             </Grid>
           </Box>
@@ -148,12 +126,7 @@ const Question = memo(function Question(props: QuestionParams) {
                   justifyContent: "center",
                 }}
               >
-                <AnswerButtons
-                  value={
-                    initialResponse ? initialResponse["botexp"] : undefined
-                  }
-                  onChange={handleChange("botexp")}
-                />
+                <AnswerButtons questionID={questionData.ID} category="botexp" />
               </Grid>
             </Grid>
           </Box>

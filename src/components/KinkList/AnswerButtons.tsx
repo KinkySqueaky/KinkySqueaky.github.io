@@ -1,18 +1,31 @@
 import { memo } from "react";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup/ButtonGroup";
+import { Category } from "./utils";
+
+import { useKLSelector, useKLDispatch } from "./store";
 
 interface AnswerButtonsParams {
-  value: string | undefined;
-  onChange: (value: string) => void;
+  questionID: string;
+  category: Category;
 }
 
 const AnswerButtons = memo(function AnswerButtons(props: AnswerButtonsParams) {
-  const { value, onChange } = props;
+  const { questionID, category } = props;
+
+  const answerData = useKLSelector(
+    (state) => state.kinklist?.[questionID]?.[category]
+  );
+  const dispatch = useKLDispatch();
 
   const handleChange = (newValue: string) => {
-    const useValue = newValue === value ? "H" : newValue;
-    onChange(useValue);
+    const useValue = newValue === answerData ? "H" : newValue;
+    dispatch({
+      type: "ANSWER",
+      question: questionID,
+      category: category,
+      value: useValue,
+    });
   };
 
   return (
@@ -30,7 +43,7 @@ const AnswerButtons = memo(function AnswerButtons(props: AnswerButtonsParams) {
     >
       <Button
         color="btnHL"
-        variant={value === "A" ? "contained" : undefined}
+        variant={answerData === "A" ? "contained" : undefined}
         onClick={() => {
           handleChange("A");
         }}
@@ -39,7 +52,7 @@ const AnswerButtons = memo(function AnswerButtons(props: AnswerButtonsParams) {
       </Button>
       <Button
         color="btnSL"
-        variant={value === "B" ? "contained" : undefined}
+        variant={answerData === "B" ? "contained" : undefined}
         onClick={() => {
           handleChange("B");
         }}
@@ -48,7 +61,7 @@ const AnswerButtons = memo(function AnswerButtons(props: AnswerButtonsParams) {
       </Button>
       <Button
         color="btn0"
-        variant={value === "C" ? "contained" : undefined}
+        variant={answerData === "C" ? "contained" : undefined}
         onClick={() => {
           handleChange("C");
         }}
@@ -57,7 +70,7 @@ const AnswerButtons = memo(function AnswerButtons(props: AnswerButtonsParams) {
       </Button>
       <Button
         color="btn1"
-        variant={value === "D" ? "contained" : undefined}
+        variant={answerData === "D" ? "contained" : undefined}
         onClick={() => {
           handleChange("D");
         }}
@@ -66,7 +79,7 @@ const AnswerButtons = memo(function AnswerButtons(props: AnswerButtonsParams) {
       </Button>
       <Button
         color="btn2"
-        variant={value === "E" ? "contained" : undefined}
+        variant={answerData === "E" ? "contained" : undefined}
         onClick={() => {
           handleChange("E");
         }}
@@ -75,7 +88,7 @@ const AnswerButtons = memo(function AnswerButtons(props: AnswerButtonsParams) {
       </Button>
       <Button
         color="btn3"
-        variant={value === "F" ? "contained" : undefined}
+        variant={answerData === "F" ? "contained" : undefined}
         onClick={() => {
           handleChange("F");
         }}
@@ -84,7 +97,7 @@ const AnswerButtons = memo(function AnswerButtons(props: AnswerButtonsParams) {
       </Button>
       <Button
         color="btn4"
-        variant={value === "G" ? "contained" : undefined}
+        variant={answerData === "G" ? "contained" : undefined}
         onClick={() => {
           handleChange("G");
         }}
