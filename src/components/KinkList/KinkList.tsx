@@ -9,7 +9,6 @@ import { type RootState } from "../../store/store";
 import { initialize, cleanup } from "./slice";
 
 import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
 
 import Group from "./Group";
 import { questionData } from "./QuestionData";
@@ -45,13 +44,12 @@ const KinkList = memo(function KinkList() {
       sx={{
         paddingLeft: { xxl: "12px" },
         paddingRight: { xxl: "12px" },
+        paddingBottom: "16px",
       }}
     >
-      <Box sx={{ marginBottom: 2 }}>
-        {questionData.map((group) => (
-          <Group groupData={group} key={group.title} />
-        ))}
-      </Box>
+      {questionData.map((group) => (
+        <Group groupData={group} key={group.title} />
+      ))}
     </Container>
   );
 });

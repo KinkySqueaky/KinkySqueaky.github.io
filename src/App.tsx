@@ -1,12 +1,14 @@
 import { useMemo } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import { Provider } from "react-redux";
 import { StableNavigateContextProvider } from "./hooks/StableNavigate";
+import { Provider } from "react-redux";
 import { store } from "./store/store";
+import NavBar from "./components/NavBar/NavBar";
+import Home from "./components/Home/Home";
 import Error from "./components/Error/Error";
 import KinkList from "./components/KinkList/KinkList";
-import Home from "./components/Home/Home";
-import NavBar from "./components/NavBar/NavBar";
+import UserManual from "./components/UserManual/UserManual";
+import QuickStart from "./components/UserManual/QuickStart";
 import * as RoutePaths from "./constants/RoutePaths";
 
 export default function App() {
@@ -20,6 +22,10 @@ export default function App() {
             <Route path="" element={<Home />} />
             <Route path={RoutePaths.KINKLIST} element={<KinkList />}>
               <Route path=":listData" element={<KinkList />} />
+            </Route>
+            <Route path={RoutePaths.USERMANUAL}>
+              <Route path="" element={<UserManual />} />
+              <Route path={RoutePaths.QUICKSTART} element={<QuickStart />} />
             </Route>
             <Route path="*" element={<Error />} />
           </Routes>

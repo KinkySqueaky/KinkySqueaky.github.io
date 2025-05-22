@@ -45,7 +45,7 @@ const Question = memo(function Question(props: QuestionParams) {
           <Box mb={1}>
             <Grid container spacing={1}>
               <Grid item xs={12} md={4}>
-                <Typography variant="body1" sx={{ textAlign: "center" }}>
+                <Typography variant="body2" sx={{ textAlign: "center" }}>
                   {questionData.top
                     ? `${questionData.top} Interest`
                     : "Interest"}
@@ -68,7 +68,7 @@ const Question = memo(function Question(props: QuestionParams) {
           <Box mb={1}>
             <Grid container spacing={1}>
               <Grid item xs={12} md={4}>
-                <Typography variant="body1" sx={{ textAlign: "center" }}>
+                <Typography variant="body2" sx={{ textAlign: "center" }}>
                   {questionData.top
                     ? `${questionData.top} Experience`
                     : "Experience"}
@@ -93,7 +93,7 @@ const Question = memo(function Question(props: QuestionParams) {
               <Box mb={1}>
                 <Grid container spacing={1}>
                   <Grid item xs={12} md={4}>
-                    <Typography variant="body1" sx={{ textAlign: "center" }}>
+                    <Typography variant="body2" sx={{ textAlign: "center" }}>
                       {questionData.bottom} Interest
                     </Typography>
                   </Grid>
@@ -117,7 +117,7 @@ const Question = memo(function Question(props: QuestionParams) {
               <Box mb={1}>
                 <Grid container spacing={1}>
                   <Grid item xs={12} md={4}>
-                    <Typography variant="body1" sx={{ textAlign: "center" }}>
+                    <Typography variant="body2" sx={{ textAlign: "center" }}>
                       {questionData.bottom} Experience
                     </Typography>
                   </Grid>

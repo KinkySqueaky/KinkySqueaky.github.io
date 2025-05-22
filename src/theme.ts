@@ -83,6 +83,14 @@ const theme = createTheme(initialTheme, {
       },
     }),
   },
+  typography: {
+    body1: {
+      fontSize: "1.125rem",
+    },
+    body2: {
+      fontSize: "1rem",
+    },
+  },
 });
 
 export default theme;
