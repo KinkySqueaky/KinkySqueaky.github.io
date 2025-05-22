@@ -1,15 +1,19 @@
-import { memo } from "react";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
+
 import * as RoutePaths from "../../constants/RoutePaths";
 
-const UserManual = memo(function UserManual() {
+import Intro from "./Intro";
+import BasicsOfPlay from "./BasicsOfPlay";
+
+export default function UserManual() {
   return (
     <Container
       maxWidth="xxl"
       sx={{
         paddingTop: "16px",
+        paddingBottom: "16px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -25,10 +29,11 @@ const UserManual = memo(function UserManual() {
         <Link href={`#/${RoutePaths.USERMANUAL}/${RoutePaths.QUICKSTART}`}>
           Quick Start
         </Link>{" "}
-        version. Otherwise, feel free to check out the various sections below!
+        version. Otherwise, feel free to check out the various sections below
+        (they're collapsible UwU)!
       </Typography>
+      <Intro />
+      <BasicsOfPlay />
     </Container>
   );
-});
-
-export default UserManual;
+}

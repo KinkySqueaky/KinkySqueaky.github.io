@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { StableNavigateContextProvider } from "./hooks/StableNavigate";
 import { Provider } from "react-redux";
@@ -12,12 +11,11 @@ import QuickStart from "./components/UserManual/QuickStart";
 import * as RoutePaths from "./constants/RoutePaths";
 
 export default function App() {
-  const navbar = useMemo(() => <NavBar />, []);
   return (
     <HashRouter>
       <StableNavigateContextProvider>
         <Provider store={store}>
-          {navbar}
+          <NavBar />
           <Routes>
             <Route path="" element={<Home />} />
             <Route path={RoutePaths.KINKLIST} element={<KinkList />}>

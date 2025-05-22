@@ -1,11 +1,10 @@
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
-import { memo } from "react";
 import * as RoutePaths from "../../constants/RoutePaths";
 import Grid from "@mui/material/Grid";
 
-const QuickStart = memo(function QuickStart() {
+export default function QuickStart() {
   return (
     <Container
       maxWidth="xxl"
@@ -78,6 +77,4 @@ const QuickStart = memo(function QuickStart() {
       </Typography>
     </Container>
   );
-});
-
-export default QuickStart;
+}

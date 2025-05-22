@@ -37,7 +37,7 @@ const initialTheme = createTheme({
       main: "#556cd6",
     },
     secondary: {
-      main: "#19857b",
+      main: "#c8a5ff",
     },
     error: {
       main: red.A400,
@@ -89,6 +89,9 @@ const theme = createTheme(initialTheme, {
     },
     body2: {
       fontSize: "1rem",
+    },
+    h5: {
+      fontSize: "28px",
     },
   },
 });
