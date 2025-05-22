@@ -103,11 +103,10 @@ export default function BottomDetails() {
           </Body>
           <Body>
             Biting and scratching are also types of pain that I really{" "}
-            <em>really</em>
-            enjoy, especially with bites if there's a little tug at the skin or
-            if it's on my neck. The back is also a fantastic spot for biting and
-            scratching. I've almost had an orgasm just from being bitten the
-            right way which is somewhat embarrassing but also kind of
+            <em>really</em> enjoy, especially with bites if there's a little tug
+            at the skin or if it's on my neck. The back is also a fantastic spot
+            for biting and scratching. I've almost had an orgasm just from being
+            bitten the right way which is somewhat embarrassing but also kind of
             fascinating to me because I would absolutely not use "painslut" as a
             descriptor for myself. For all other types of pain, those can be
             discussed individually.
