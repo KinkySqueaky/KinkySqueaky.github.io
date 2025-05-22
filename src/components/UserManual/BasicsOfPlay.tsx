@@ -56,12 +56,12 @@ export default function BasicsOfPlay() {
             use it:
             <ul>
               <li>
-                <span style={{ color: "#44cc00" }}>Green</span>: We're all good
+                <span style={{ color: "#66dd00" }}>Green</span>: We're all good
                 to keep going! This doesn't mean "go harder," it means "we're
                 all good to keep going as we are."
               </li>
               <li>
-                <span style={{ color: "#cccc00" }}>Yellow</span>: I need to stop
+                <span style={{ color: "#e4e400" }}>Yellow</span>: I need to stop
                 for a break and check in. This doesn't necessarily mean play is
                 over, but we need to evaluate whether it can and should
                 continue.
@@ -74,12 +74,13 @@ export default function BasicsOfPlay() {
             </ul>
           </Body>
           <Body>
-            There's a pretty big jump between "green" and "yellow" so if I need
-            you to slow down but not stop, I'll just use plain language
-            communication. I'm also willing to adapt my system as needed on a
-            per-person or a per-scene basis as long as we discuss it ahead of
-            time and refresh on it right before a scene if we planned the scene
-            ahead of time.
+            There's a pretty big jump between{" "}
+            <span style={{ color: "#66dd00" }}>green</span> and{" "}
+            <span style={{ color: "#e4e400" }}>yellow</span> so if I need you to
+            slow down but not stop, I'll just use plain language communication.
+            I'm also willing to adapt my system as needed on a per-person or a
+            per-scene basis as long as we discuss it ahead of time and refresh
+            on it right before a scene if we planned the scene ahead of time.
           </Body>
           <Body>
             I've got a handful of different behaviors that come up during play
@@ -138,8 +139,13 @@ export default function BasicsOfPlay() {
                 </ul>
               </li>
               <li>
-                I didn't cause any unintentional harm - If I did, why did it
-                happen and what I can do to help with the aftermath?
+                I didn't cause any unintentional harm
+                <ul>
+                  <li>
+                    If I did, why did it happen and what I can do to help with
+                    the aftermath?
+                  </li>
+                </ul>
               </li>
             </ul>
           </Body>
@@ -207,21 +213,22 @@ export default function BasicsOfPlay() {
           </Body>
           <Body>
             Even though I've made progress with some of these things, there's
-            still one area that fucks me up. _Never_ carelessly mess around with
-            themes of perfection. I've got some trauma wrapped up here from
-            growing up, and it's a sensitive spot that will quickly ruin a scene
-            for all parties involved because I'm likely to break down. For
-            reference, a careless use of “trying isn't doing” while I was in an
-            especially vulnerable headspace has caused such emotional damage in
-            the past that there were physical consequences (read into it if you
-            want, or don't, your choice). I will note that because I've
-            communicated this to people I've played with, I haven't actually
-            tried pressing this button to see if/how it messes with me in recent
-            months. With the right person, I'm open to seeing the consequences
-            of playing with themes of perfection. It'd likely be beneficial to
-            do this at some point in the near future to update this section with
-            more recent data, but that's for a future version of this document.
-            Also "Kink isn't therapy" and all that jazz, yada yada yada...
+            still one area that fucks me up. <em>Never</em> carelessly mess
+            around with themes of perfection. I've got some trauma wrapped up
+            here from growing up, and it's a sensitive spot that will quickly
+            ruin a scene for all parties involved because I'm likely to break
+            down. For reference, a careless use of “trying isn't doing” while I
+            was in an especially vulnerable headspace has caused such emotional
+            damage in the past that there were physical consequences (read into
+            it if you want, or don't, your choice). I will note that because
+            I've communicated this to people I've played with, I haven't
+            actually tried pressing this button to see if/how it messes with me
+            in recent months. With the right person, I'm open to seeing the
+            consequences of playing with themes of perfection. It'd likely be
+            beneficial to do this at some point in the near future so I can
+            update this section with more recent data, but that's for a future
+            version of this document. Also "Kink isn't therapy" and all that
+            jazz, yada yada yada...
           </Body>
           <Body>
             Talk of suicide is also an exceptionally difficult topic for me. I

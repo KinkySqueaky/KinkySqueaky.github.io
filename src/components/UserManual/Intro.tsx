@@ -6,6 +6,8 @@ import Typography from "@mui/material/Typography";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
+import { Body } from "./formats";
+
 export default function Intro() {
   const [expanded, toggleExpanded] = useReducer((state) => !state, true);
 
@@ -19,7 +21,7 @@ export default function Intro() {
       </Typography>
       {expanded && (
         <>
-          <Typography variant="body1">
+          <Body>
             Hi, I'm Squeaky! If you're reading this, you're probably interested
             in play or just getting to know me better. I'm generally a
             sub-leaning switch, which for me means that I tend to prefer being a
@@ -29,8 +31,8 @@ export default function Intro() {
             lately, but I'm def still a subby bottom bitch at heart. I'm also
             always looking to expand/refine my skill set both as a bottom and a
             top.
-          </Typography>
-          <Typography variant="body1">
+          </Body>
+          <Body>
             I try my best to provide consistent, clear communication, and I
             expect the same from my play partners. I sometimes miss social cues,
             so directly stating your intentions and interests will go a long way
@@ -43,8 +45,8 @@ export default function Intro() {
             in making sure my partners are having a good time, but I won't
             sacrifice my own enjoyment. So, if we don't mesh well with me as a
             top, I'm highly unlikely to force it.
-          </Typography>
-          <Typography variant="body1">
+          </Body>
+          <Body>
             For more information on who I am as a person, refer to the Vanilla
             Squeaky section of this page. I used to have this on the About Me
             section of my FetLife profile, but I'm trying to move away from
@@ -57,7 +59,7 @@ export default function Intro() {
             who somehow managed to find this. Pretty sure this site doesn't even
             show up on Google if you search for it yet, so congratulations! How
             and why the fuck are you even here...
-          </Typography>
+          </Body>
         </>
       )}
     </>
