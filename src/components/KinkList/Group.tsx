@@ -29,7 +29,7 @@ const Group = memo(function Group(props: GroupParams) {
         {groupData.title}
       </Typography>
       {expanded && (
-        <Grid container spacing={2} sx={{ justifyContent: "center" }}>
+        <Grid container spacing={2}>
           {groupData.questions.map((qst) => (
             <Grid item xs={12} sm={6} xl={4} key={qst.ID}>
               <Question questionData={qst} />

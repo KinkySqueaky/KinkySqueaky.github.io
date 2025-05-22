@@ -29,7 +29,7 @@ const QuickStart = memo(function QuickStart() {
         with before (duh). I'd highly recommend reading the detailed version
         because there's a lot of nuance to this stuff, but whatever.
       </Typography>
-      <Grid container spacing={2} sx={{ justifyContent: "center" }}>
+      <Grid container spacing={2}>
         <Grid item xs={12} xl={4}>
           <Typography variant="body1">
             My limits:
