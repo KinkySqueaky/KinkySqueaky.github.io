@@ -62,8 +62,8 @@ const KinkList = memo(function KinkList() {
         >
           <Alert severity="info" onClose={toggleShowInfo}>
             Hello, thanks for checking out the kink list! As you edit your
-            answers, the URL updates to match your answers. If want to share
-            your results or save them for later, just share/save the URL when
+            answers, the URL updates to match your answers. If you want to share
+            your responses or save them for later, just share/save the URL when
             you're done! This is currently a first cut, so there are plenty more
             features to come like search and filtering. Have fun!
           </Alert>
