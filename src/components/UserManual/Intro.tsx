@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 
-import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
@@ -13,12 +14,24 @@ export default function Intro() {
 
   return (
     <>
-      <Typography variant="h4" align="center">
-        <IconButton onClick={toggleExpanded}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Button
+          color="white"
+          sx={{ textTransform: "unset", padding: "0px" }}
+          onClick={toggleExpanded}
+        >
           {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-        </IconButton>
-        Intro
-      </Typography>
+          <Typography variant="h4" sx={{ padding: "0px 8px" }}>
+            Intro
+          </Typography>
+          {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </Button>
+      </Box>
       {expanded && (
         <>
           <Body>
@@ -48,7 +61,7 @@ export default function Intro() {
           </Body>
           <Body>
             For more information on who I am as a person, refer to the Vanilla
-            Squeaky section of this page. I used to have this on the About Me
+            Life section of this page. I used to have this on the About Me
             section of my FetLife profile, but I'm trying to move away from
             keeping this there -- the writings feature isn't quite what I
             want/need for this. If there's something you're really curious about

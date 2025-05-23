@@ -9,6 +9,7 @@ declare module "@mui/material/styles" {
 
 declare module "@mui/material/Button" {
   interface ButtonPropsColorOverrides {
+    white: true;
     btnHL: true;
     btnSL: true;
     btn0: true;
@@ -47,6 +48,11 @@ const initialTheme = createTheme({
 
 const theme = createTheme(initialTheme, {
   palette: {
+    white: initialTheme.palette.augmentColor({
+      color: {
+        main: "#ffffff",
+      },
+    }),
     btnHL: initialTheme.palette.augmentColor({
       color: {
         main: "#ff6161",

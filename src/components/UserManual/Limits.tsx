@@ -1,7 +1,10 @@
 import { useReducer } from "react";
 
-import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+import * as RoutePaths from "../../constants/RoutePaths";
 
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -13,12 +16,24 @@ export default function Limits() {
 
   return (
     <>
-      <Typography variant="h4" align="center">
-        <IconButton onClick={toggleExpanded}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Button
+          color="white"
+          sx={{ textTransform: "unset", padding: "0px" }}
+          onClick={toggleExpanded}
+        >
           {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-        </IconButton>
-        Limits
-      </Typography>
+          <Typography variant="h4" sx={{ padding: "0px 8px" }}>
+            Limits
+          </Typography>
+          {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </Button>
+      </Box>
       {expanded && (
         <>
           <Body>
@@ -32,8 +47,18 @@ export default function Limits() {
             we've played for a while and have some kind of established history,
             sure, maybe. Fucking <strong>maybe</strong>. Some of my limits are
             hard limits, full stop, no ifs, ands, or buts. Others are a bit more
-            fluid. You can see all of them in my kink list, but there are a few
-            that I think are worth talking about.
+            fluid. You can see all of them in my{" "}
+            <Link
+              href={`#/${RoutePaths.KINKLIST}/${RoutePaths.SQUEAKYLIST}`}
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                })
+              }
+            >
+              kink list
+            </Link>
+            , but there are a few that I think are worth talking about.
           </Body>
           <Body>
             In general, the following rules apply regardless of the specific

@@ -3,7 +3,6 @@ import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
-import IconButton from "@mui/material/IconButton";
 import Box, { BoxProps } from "@mui/material/Box";
 import Button, { ButtonProps } from "@mui/material/Button";
 import Typography, { TypographyProps } from "@mui/material/Typography";
@@ -38,17 +37,31 @@ const Key = memo(function Key() {
     <Card
       sx={{
         padding: "16px",
+        paddingTop: "8px",
+        paddingBottom: expanded ? "16px" : "8px",
         display: "flex",
         flexDirection: "column",
         width: "576px",
       }}
     >
-      <Typography align="center" variant="h6">
-        <IconButton onClick={toggleExpanded}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Button
+          color="white"
+          sx={{ textTransform: "unset" }}
+          onClick={toggleExpanded}
+        >
           {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-        </IconButton>
-        Key
-      </Typography>
+          <Typography variant="h6" sx={{ padding: "0px 4px" }}>
+            Key
+          </Typography>
+          {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </Button>
+      </Box>
       {expanded && (
         <>
           <Divider sx={{ marginTop: 1, marginBottom: 1 }} />

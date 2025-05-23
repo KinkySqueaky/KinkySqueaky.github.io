@@ -1,8 +1,8 @@
 import { useReducer, memo } from "react";
 
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
@@ -22,12 +22,25 @@ const Group = memo(function Group(props: GroupParams) {
 
   return (
     <Box sx={{ mt: 2 }}>
-      <Typography variant="h4" sx={{ textAlign: "center", marginBottom: 2 }}>
-        <IconButton onClick={toggleExpanded}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: expanded ? "16px" : "0px",
+        }}
+      >
+        <Button
+          color="white"
+          sx={{ textTransform: "unset" }}
+          onClick={toggleExpanded}
+        >
           {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-        </IconButton>
-        {groupData.title}
-      </Typography>
+          <Typography variant="h4" sx={{ padding: "0px 8px" }}>
+            {groupData.title}
+          </Typography>
+          {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </Button>
+      </Box>
       {expanded && (
         <Grid container spacing={2}>
           {groupData.questions.map((qst) => (

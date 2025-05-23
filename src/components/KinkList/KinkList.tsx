@@ -1,4 +1,4 @@
-import { useEffect, memo } from "react";
+import { useEffect, useReducer, memo } from "react";
 import { useParams } from "react-router-dom";
 
 import { useStableNavigate } from "../../hooks/StableNavigate";
@@ -10,6 +10,7 @@ import { initialize, cleanup } from "./slice";
 
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
+import Alert from "@mui/material/Alert";
 
 import Group from "./Group";
 import Key from "./Key";
@@ -19,6 +20,8 @@ import { responseToCode } from "./utils";
 const KinkList = memo(function KinkList() {
   const { listData } = useParams();
   const navigate = useStableNavigate();
+
+  const [showInfo, toggleShowInfo] = useReducer((state) => !state, true);
 
   const responses = useSelector((state: RootState) => state.kinklist);
   const dispatch = useDispatch();
@@ -49,6 +52,25 @@ const KinkList = memo(function KinkList() {
         paddingBottom: "16px",
       }}
     >
+      {showInfo && (
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            paddingTop: "16px",
+          }}
+        >
+          <Alert severity="info" onClose={toggleShowInfo}>
+            Hello, thanks for checking out the kink list! This is currently a
+            first cut, so there are plenty more features to come. The immediate
+            next steps are to add search and filtering, add virtualization to
+            make opening groups smoother, and adding QR code generation to help
+            handle the really long URLs. The groups open and close, so you don't
+            have to look at everything at once. Have fun!
+          </Alert>
+        </Box>
+      )}
+
       <Box
         sx={{
           display: "flex",

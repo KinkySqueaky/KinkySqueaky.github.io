@@ -1,7 +1,10 @@
 import { useReducer } from "react";
 
-import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+import * as RoutePaths from "../../constants/RoutePaths";
 
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -13,20 +16,42 @@ export default function BottomDetails() {
 
   return (
     <>
-      <Typography variant="h4" align="center">
-        <IconButton onClick={toggleExpanded}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Button
+          color="white"
+          sx={{ textTransform: "unset", padding: "0px" }}
+          onClick={toggleExpanded}
+        >
           {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-        </IconButton>
-        Specific Kinks as a Submissive or Bottom
-      </Typography>
+          <Typography variant="h4" sx={{ padding: "0px 8px" }}>
+            Bottom Details
+          </Typography>
+          {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+        </Button>
+      </Box>
       {expanded && (
         <>
           <Body>
             The kinks listed here are just the ones that I have something to say
             about more than "I'd like to try that (more)" or "I like that shit."
-            So if there are kinks listed in my kink list that aren't on here, I
-            either don't have much to say about them or just haven't gotten
-            around to putting abstract thoughts into words.
+            So if there are kinks listed in my{" "}
+            <Link
+              href={`#/${RoutePaths.KINKLIST}/${RoutePaths.SQUEAKYLIST}`}
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                })
+              }
+            >
+              kink list
+            </Link>{" "}
+            that aren't on here, I either don't have much to say about them or
+            just haven't gotten around to putting abstract thoughts into words.
           </Body>
 
           <Header>Service Nature</Header>

@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
-import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Theme } from "@mui/material/styles";
@@ -30,15 +30,31 @@ const Question = memo(function Question(props: QuestionParams) {
 
   return (
     <Card sx={{ width: "100%", padding: 2 }}>
-      <Typography variant="h6" sx={{ textAlign: "center" }}>
-        {!hideCollapse && (
-          <IconButton onClick={toggleExpanded}>
+      {hideCollapse ? (
+        <Typography variant="h6" sx={{ textAlign: "center" }}>
+          {questionData.title}
+        </Typography>
+      ) : (
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Button
+            color="white"
+            sx={{ padding: "0px", textTransform: "unset" }}
+            onClick={toggleExpanded}
+          >
             {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-          </IconButton>
-        )}
+            <Typography variant="h6" sx={{ padding: "0px 4px" }}>
+              {questionData.title}
+            </Typography>
+            {expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+          </Button>
+        </Box>
+      )}
 
-        {questionData.title}
-      </Typography>
       {(hideCollapse || expanded) && (
         <>
           <Divider sx={{ marginTop: 1, marginBottom: 1 }} />
