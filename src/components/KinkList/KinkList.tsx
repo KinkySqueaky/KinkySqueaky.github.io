@@ -61,12 +61,11 @@ const KinkList = memo(function KinkList() {
           }}
         >
           <Alert severity="info" onClose={toggleShowInfo}>
-            Hello, thanks for checking out the kink list! This is currently a
-            first cut, so there are plenty more features to come. The immediate
-            next steps are to add search and filtering, add virtualization to
-            make opening groups smoother, and adding QR code generation to help
-            handle the really long URLs. The groups open and close, so you don't
-            have to look at everything at once. Have fun!
+            Hello, thanks for checking out the kink list! As you edit your
+            answers, the URL updates to match your answers. If want to share
+            your results or save them for later, just share/save the URL when
+            you're done! This is currently a first cut, so there are plenty more
+            features to come like search and filtering. Have fun!
           </Alert>
         </Box>
       )}
