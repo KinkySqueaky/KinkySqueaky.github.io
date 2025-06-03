@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import * as RoutePaths from "../../constants/RoutePaths";
 import Grid from "@mui/material/Grid";
 
-import { Body } from "./formats";
+import { Body } from "../../utils/formats";
 
 export default function QuickStart() {
   return (

@@ -8,6 +8,7 @@ import Error from "./components/Error/Error";
 import KinkList from "./components/KinkList/KinkList";
 import UserManual from "./components/UserManual/UserManual";
 import QuickStart from "./components/UserManual/QuickStart";
+import SceneIdeas from "./components/SceneIdeas/SceneIdeas";
 import * as RoutePaths from "./constants/RoutePaths";
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
               <Route path="" element={<UserManual />} />
               <Route path={RoutePaths.QUICKSTART} element={<QuickStart />} />
             </Route>
+            <Route path={RoutePaths.SCENEIDEAS} element={<SceneIdeas />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </Provider>

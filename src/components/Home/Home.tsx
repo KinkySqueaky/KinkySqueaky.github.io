@@ -47,6 +47,20 @@ export default function Home() {
           User Manual
         </Button>
       </Box>
+      <Typography align="center" variant="h4">
+        I also have some scene ideas/concepts that are in varying stages of
+        developedness.
+      </Typography>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Button
+          variant="contained"
+          onClick={() => {
+            navigate(RoutePaths.SCENEIDEAS);
+          }}
+        >
+          Scene Ideas
+        </Button>
+      </Box>
     </Container>
   );
 }

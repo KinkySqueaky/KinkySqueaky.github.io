@@ -1,9 +1,8 @@
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
-import Divider from "@mui/material/Divider";
-
 import * as RoutePaths from "../../constants/RoutePaths";
+import { Line } from "../../utils/formats";
 
 import Intro from "./Intro";
 import VanillaLife from "./VanillaLife";
@@ -12,8 +11,6 @@ import QuirksOfPlay from "./QuirksOfPlay";
 import Limits from "./Limits";
 import BottomDetails from "./BottomDetails";
 import TopDetails from "./TopDetails";
-
-const Line = () => <Divider sx={{ marginTop: 1, marginBottom: 1 }} />;
 
 export default function UserManual() {
   return (

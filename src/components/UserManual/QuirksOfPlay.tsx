@@ -8,7 +8,7 @@ import Link from "@mui/material/Link";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-import { Header, Body } from "./formats";
+import { Header, Body } from "../../utils/formats";
 
 export default function QuirksOfPlay() {
   const [expanded, toggleExpanded] = useReducer((state) => !state, true);
