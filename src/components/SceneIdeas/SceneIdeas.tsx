@@ -50,7 +50,7 @@ export default function SceneIdeas() {
         playthrough of Dark Souls (a notoriously difficult video game). If I
         died to a regular enemy, that was 1 point. If I died to a boss, that was
         2 points. If I died by falling off a cliff, that was 3 points. At the
-        end of my playthrough, the points were summed, and the top had a
+        end of my playthrough, the points were totalled up, and the top had a
         predetermined "menu" of punishments they could buy with the points.
         That's a bit more of a long-term one (the playthrough took a couple
         weeks). If your sub is into rhythm games, maybe try giving them a
@@ -64,12 +64,12 @@ export default function SceneIdeas() {
         it a close competition for more excitement! Though, a total blowout is
         also fun sometimes. Another example from my past: I was learning how to
         play chess and the top I was playing with at the time was significantly
-        better than me. For every point of material she was up by at the end of
-        the game was another spank unless I somehow managed to win (I didn't,
-        I'm quite bad at chess). The competition framing also works really well
-        for two switches playing together if you need a unique way to determine
-        who tops. Watching two subs compete is also a fun time, so give them
-        some motivation by rewarding the winner and punishing the loser.
+        better than me. Every point of material she was up by at the end of the
+        game was another spank unless I somehow managed to win (I didn't, I'm
+        quite bad at chess). The competition framing also works really well for
+        two switches playing together if you need a unique way to determine who
+        tops. Watching two subs compete is also a fun time, so give them some
+        motivation by rewarding the winner and punishing the loser.
       </Body>
       <Line />
 
