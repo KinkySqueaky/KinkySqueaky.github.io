@@ -28,6 +28,9 @@ export default function Home() {
           variant="contained"
           onClick={() => {
             navigate(RoutePaths.KINKLIST);
+            window.scrollTo({
+              top: 0,
+            });
           }}
         >
           Kink List
@@ -42,6 +45,9 @@ export default function Home() {
           variant="contained"
           onClick={() => {
             navigate(RoutePaths.USERMANUAL);
+            window.scrollTo({
+              top: 0,
+            });
           }}
         >
           User Manual
@@ -56,6 +62,9 @@ export default function Home() {
           variant="contained"
           onClick={() => {
             navigate(RoutePaths.SCENEIDEAS);
+            window.scrollTo({
+              top: 0,
+            });
           }}
         >
           Scene Ideas
